@@ -1,0 +1,114 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box
+}
+
+body {
+    height :100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #030030;
+}
+
+.container {
+    height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.solar {
+    height: 450px;
+    width: 450px;
+    border-radius: 50%;
+    position: relative;
+    border: 1.5px solid #afafaf;
+    animation: rotation 50s linear infinite;
+}
+
+.sun{
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    transform: translate(-50%, -50);
+    background-color: #ff8800;
+    border-radius: 50%;
+    animation: pulse-sun 2s linear infinite;
+}
+
+.planet{
+    position: absolute;
+    top: -60px;
+    height: 150px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 150px;
+    border: 1px solid #909090;
+    border-radius: 50%;
+    animation: rotation 20s linear infinite;
+}
+.earth{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3454fe;
+    height: 50px;
+    width: 50px;
+    border-radius:50%;
+    animation: pulse-earth 40s linear infinite;
+}
+
+.moon {
+    position: absolute;
+    top: -5px;
+    left: 50px;
+    transform: translate(-50%, 0);
+    background-color: #fefafa;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    animation: pulse-moon 5s linear infinite;
+}
+
+@keyframes pulse-sun {
+    from{
+        box-shadow: 0 0 0 0 #ff803790;
+    }
+
+    to {
+        box-shadow: 0 0 0 50px rgba(0,0,0,0);
+    }
+}
+
+@keyframes pulse-moon {
+    from{
+        box-shadow: 0 0 0 0 #b6eeff;
+    }
+
+    to {
+        box-shadow: 0 0 0 15px rgba(0,0,0,0);
+    }
+}
+
+@keyframes pulse-earth {
+    from{
+        box-shadow: 0 0 0 0 #76ffe8;
+    }
+
+    to {
+        box-shadow: 0 0 0 5px rgba(0,0,0,0);
+    }
+}
+
+@keyframes rotation{
+    from{
+        transform: rotate(0deg)
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
